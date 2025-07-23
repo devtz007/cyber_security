@@ -63,7 +63,7 @@ This document explains the DNS, SSL, and redirect setup for hosting a static web
 ## Request Flow Summary
 
 ```
-User enters URL (e.g., example.com or http://example.com)
+User enters URL (e.g., example.com )
 │
 ▼
 Cloudflare receives the request
