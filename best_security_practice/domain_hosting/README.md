@@ -110,7 +110,6 @@ User sees secure site at https://www.example.com/...
 
 ## Troubleshooting
 
-- If you see SSL errors, check Cloudflare SSL mode and ensure GitHub Pages enforces HTTPS.
 - DNS changes may take some time to propagate.
 - Verify your DNS records do not conflict or duplicate in Cloudflare.
 - Use online SSL checkers (e.g., [SSL Labs](https://www.ssllabs.com/ssltest/)) to verify SSL setup.
