@@ -75,21 +75,18 @@ If request is HTTP:
 │
 ▼
 Cloudflare Redirect Rule:
-- If Hostname == example.com
+- If Hostname == https://example.com
   → Redirect 301 to https://www.example.com/${uri}
   (Request restarts as HTTPS to www.example.com)
 │
 ▼
-Cloudflare resolves www.example.com → CNAME → example.github.io
+Cloudflare resolves www.example.com → CNAME → examplehost.github.io
 │
 ▼
-Cloudflare serves HTTPS (Universal SSL)
+Cloudflare fetches from GitHub Pages origin (Enforce HTTPS should be enabled in  examplehost.github.io)
 │
 ▼
-Cloudflare fetches from GitHub Pages origin (HTTPS connection)
-│
-▼
-GitHub Pages serves static site for www.example.com
+GitHub Pages serves static site for www.example.com (Add www.example.com in Custom domain input field)
 │
 ▼
 Cloudflare forwards content to user
