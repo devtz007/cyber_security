@@ -15,14 +15,13 @@ This document explains the DNS, SSL, and redirect setup for hosting a static web
 
 ## DNS Configuration
 
-| Type  | Name        | Content                 | Proxy Status | Notes                            |
-| ----- | ----------- | ----------------------- | ------------ | -------------------------------- |
-| A     | example.com | 185.199.108.153         | Proxied      | GitHub Pages IP addresses (4x)   |
-| A     | example.com | 185.199.109.153         | Proxied      |                                  |
-| A     | example.com | 185.199.110.153         | Proxied      |                                  |
-| A     | example.com | 185.199.111.153         | Proxied      |                                  |
-| CNAME | www         | example.github.io       | DNS Only     | Points to GitHub Pages, no proxy |
-| TXT   | \_dmarc     | `v=DMARC1; p=none; ...` | DNS Only     | Email authentication policy      |
+| Type  | Name        | Content           | Proxy Status | Notes                            |
+| ----- | ----------- | ----------------- | ------------ | -------------------------------- |
+| A     | example.com | 185.199.108.153   | Proxied      | GitHub Pages IP addresses (4x)   |
+| A     | example.com | 185.199.109.153   | Proxied      |                                  |
+| A     | example.com | 185.199.110.153   | Proxied      |                                  |
+| A     | example.com | 185.199.111.153   | Proxied      |                                  |
+| CNAME | www         | example.github.io | DNS Only     | Points to GitHub Pages, no proxy |
 
 ---
 
@@ -43,14 +42,14 @@ This document explains the DNS, SSL, and redirect setup for hosting a static web
 
 ### Redirect root domain to www subdomain
 
-| Setting    | Value                                    |
-| ---------- | ---------------------------------------- |
-| Rule name  | Redirect from Root to WWW                |
-| Type       | Dynamic                                  |
-| Expression | `wildcard_replace(http.request.full_uri, |
-|             |   "https://techjork.com/*", "https://www.techjork.com/${1}")`|
-| Status code | 301 (Permanent Redirect) |
-| Preserve query | Enabled |
+| Setting        | Value                                                       |
+| -------------- | ----------------------------------------------------------- |
+| Rule name      | Redirect from Root to WWW                                   |
+| Type           | Dynamic                                                     |
+| Expression     | `wildcard_replace(http.request.full_uri,                    |
+|                | "https://techjork.com/*", "https://www.techjork.com/${1}")` |
+| Status code    | 301 (Permanent Redirect)                                    |
+| Preserve query | Enabled                                                     |
 
 ---
 
