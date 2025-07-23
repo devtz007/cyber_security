@@ -127,6 +127,3 @@ User sees secure site at https://www.example.com/...
 
 _This README was generated to help configure and maintain your static website hosting using GitHub Pages and Cloudflare._
 
-```
-
-```
