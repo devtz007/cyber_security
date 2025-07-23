@@ -48,9 +48,7 @@ This document explains the DNS, SSL, and redirect setup for hosting a static web
 | Rule name  | Redirect from Root to WWW                |
 | Type       | Dynamic                                  |
 | Expression | `wildcard_replace(http.request.full_uri, |
-
-                    "https://techjork.com/*", "https://www.techjork.com/${1}")`
-
+|                "https://techjork.com/*", "https://www.techjork.com/${1}")`|
 | Status code | 301 (Permanent Redirect) |
 | Preserve query | Enabled |
 
