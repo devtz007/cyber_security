@@ -121,9 +121,5 @@ User sees secure site at https://www.example.com/...
 
 - [GitHub Pages Custom Domain Documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
 - [Cloudflare DNS and SSL Documentation](https://developers.cloudflare.com/ssl/)
-- [Cloudflare Page Rules & Redirects](https://developers.cloudflare.com/rules/redirect-rules/)
 
 ---
-
-_This README was generated to help configure and maintain your static website hosting using GitHub Pages and Cloudflare._
-
