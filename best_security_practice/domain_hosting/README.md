@@ -9,7 +9,7 @@ This document explains the DNS, SSL, and redirect setup for hosting a static web
 - **Domain:** `example.com`
 - **Hosting:** GitHub Pages (`example.github.io`)
 - **DNS & CDN:** Cloudflare
-- **Goal:** Serve site securely over HTTPS with root domain redirect to `www.example.com`
+- **Goal:** Serve site securely over HTTPS with root domain, Redirect to `www`,and end-to-end encryption `Visitor ──HTTPS──▶ Cloudflare Proxy ──HTTP──▶ GitHub Pages Origin Server`
 
 ---
 
@@ -28,11 +28,11 @@ This document explains the DNS, SSL, and redirect setup for hosting a static web
 
 ## Cloudflare Settings
 
-- **SSL/TLS Mode:** Full or Full (Strict)  
+- **SSL/TLS Mode:** Full or Full (Strict)
   (Ensure GitHub Pages enforces HTTPS for origin connection)
-- **Always Use HTTPS:** Enabled  
+- **Always Use HTTPS:** Enabled
   Redirect all HTTP requests to HTTPS automatically.
-- **Minimum TLS Version:** 1.3 (recommended for security)
+- **TLS Version:** 1.1 (Minimum). Also enable 1.3 (recommended for security)
 - **Proxy Status:**
   - Root domain (`example.com`) A records: **Proxied**
   - `www` CNAME record: **DNS only** (to avoid SSL mismatch)
@@ -63,53 +63,54 @@ This document explains the DNS, SSL, and redirect setup for hosting a static web
 ## Request Flow Summary
 
 ```
+
 User enters URL (e.g., example.com or www.example.com)
-        │
-        ▼
+│
+▼
 DNS Lookup via Cloudflare DNS
-        │
-        ▼
+│
+▼
 Cloudflare receives the request
-        │
-        ├── If request is HTTP (not HTTPS)
-        │       │
-        │       ▼
-        │   Cloudflare "Always Use HTTPS" Rule
-        │       │
-        │       ▼
-        │   Redirect HTTP → HTTPS (same domain)
-        │       │
-        │       ▼
-        │   Request restarts as HTTPS request
-        │
-        └── Otherwise (request is HTTPS already)
-                │
-                ▼
-       Check Redirect Rules:
-       - If Hostname == example.com (root/apex)
-                │
-                ▼
-       Redirect 301 to https://www.example.com/${uri} (with path & query)
-                │
-                ▼
-        Request restarts to www.example.com
-                │
-                ▼
+│
+├── If request is HTTP (not HTTPS)
+│ │
+│ ▼
+│ Cloudflare "Always Use HTTPS" Rule
+│ │
+│ ▼
+│ Redirect HTTP → HTTPS (same domain)
+│ │
+│ ▼
+│ Request restarts as HTTPS request
+│
+└── Otherwise (request is HTTPS already)
+│
+▼
+Check Redirect Rules: - If Hostname == example.com (root/apex)
+│
+▼
+Redirect 301 to https://www.example.com/${uri} (with path & query)
+│
+▼
+Request restarts to www.example.com
+│
+▼
 Cloudflare serves HTTPS to visitor (using Cloudflare Universal SSL)
-        │
-        ▼
+│
+▼
 Cloudflare fetches content from origin server (GitHub Pages IPs 185.199.x.x)
-        │
-        ├── Connection between Cloudflare and GitHub is HTTPS (GitHub Pages enforces HTTPS)
-        │
-        ▼
+│
+├── Connection between Cloudflare and GitHub is HTTPS (GitHub Pages enforces HTTPS)
+│
+▼
 GitHub Pages serves static content for `www.example.com`
-        │
-        ▼
+│
+▼
 Cloudflare forwards content back to visitor over HTTPS
-        │
-        ▼
+│
+▼
 User sees your website securely at https://www.example.com/...
+
 ```
 
 ---
@@ -142,3 +143,7 @@ User sees your website securely at https://www.example.com/...
 ---
 
 _This README was generated to help configure and maintain your static website hosting using GitHub Pages and Cloudflare._
+
+```
+
+```
