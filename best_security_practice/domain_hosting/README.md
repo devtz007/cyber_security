@@ -80,7 +80,7 @@ Cloudflare Redirect Rule:
   (Request restarts as HTTPS to www.example.com)
 │
 ▼
-Cloudflare resolves www.example.com → CNAME → examplehost.github.io
+Cloudflare resolves www.example.com → CNAME → example.github.io
 │
 ▼
 Cloudflare fetches from GitHub Pages origin (Enforce HTTPS should be enabled in  examplehost.github.io)
