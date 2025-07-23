@@ -43,13 +43,15 @@ This document explains the DNS, SSL, and redirect setup for hosting a static web
 
 ### Redirect root domain to www subdomain
 
-| Setting          | Value                          |
-| ---------------- | ------------------------------ |
-| Rule name        | Redirect from Root to WWW      |
-| Matching pattern | `https://example.com/*`        |
-| Redirect to URL  | `https://www.example.com/${1}` |
-| Status code      | 301 (Permanent Redirect)       |
-| Preserve query   | Enabled                        |
+| Setting          | Value                                                                |
+| ---------------- | ---------------------------------------------------------------------|
+| Rule name        | Redirect from Root to WWW                                            |
+| Type             | Dynamic                                                              |
+| Expression       | ```wildcard_replace(http.request.full_uri,                           |
+|                  |  "https://techjork.com/*", "https://www.techjork.com/${1}")```       |
+| Status code      | 301 (Permanent Redirect)                                             |
+| Preserve query   | Enabled                                                              |
+
 
 ---
 
