@@ -1,10 +1,12 @@
 <h1>Cyber Security</h1>
-<p>This repo about cyber security</p>
+<p>This repository focuses on cybersecurity, covering enumeration, vulnerability assessment, and exploitation techniques.</p>
+
+
+
 
 <h2>📫 Contact Me</h2>
 <p>Mohaiminul Tazim (devtz007)</p>
 <p>Full Stack Developer | Cyber Security Expert </p>
-
 <ul>
   <li>Email: <a href="mailto:mail.devtz007@gmail.com">mail.devtz007@gmail.com</a></li>
   <li>LinkedIn: <a href="https://www.linkedin.com/in/devtz007/" target="_blank" rel="noopener noreferrer">linkedin.com/in/devtz007</a></li>
