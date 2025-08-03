@@ -2,8 +2,7 @@
 <h2>This repo about cyber security</h2>
 
 <h2>📫 Contact Me</h2>
-
-<p>Mohaiminul Tazim (devtz007)</p><br>
+<p>Mohaiminul Tazim (devtz007)</p>
 <p>Full Stack Developer | Cyber Security Expert </p>
 
 <ul>
