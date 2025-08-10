@@ -1,4 +1,4 @@
-# Raw Data Detector
+# Unencrypted Traffic Detector
 
 This command uses `tcpdump` to monitor if any raw data passes through your Linux computer's main network interface.  
 It uses Cloudflare WARP VPN as an example. If you use another VPN, update the command with your VPN adapter IP range, VPN IP range, VPN IPv6 range (if available), and VPN network accordingly.  
