@@ -33,7 +33,7 @@ This document explains the DNS, SSL, and redirect setup for hosting a static web
   Redirect all HTTP requests to HTTPS automatically.
 - **TLS Version:** 1.1 (Minimum). Also enable 1.3 (recommended for security)
 - **Proxy Status:**
-  - Root domain (`example.com`) A records: **Proxied**
+  - Root domain (`example.com`) A records: **DNS only** (to avoid SSL mismatch)
   - `www` CNAME record: **DNS only** (to avoid SSL mismatch)
 
 ---
@@ -101,7 +101,7 @@ User sees secure site at https://www.example.com/...
 ## Notes
 
 - Cloudflare Universal SSL automatically manages certificates for your domain.
-- DNS only for the CNAME `www` avoids SSL issues with GitHub Pages.
+- DNS only for the A and CNAME `www` avoids SSL issues with GitHub Pages.
 - Proxying the root domain through Cloudflare enables performance and security benefits.
 - Enforcing HTTPS on both GitHub and Cloudflare ensures end-to-end encryption.
 - Redirects maintain URL paths and query parameters for SEO and user experience.
