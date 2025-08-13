@@ -17,10 +17,10 @@ This document explains the DNS, SSL, and redirect setup for hosting a static web
 
 | Type  | Name        | Content           | Proxy Status | Notes                            |
 | ----- | ----------- | ----------------- | ------------ | -------------------------------- |
-| A     | example.com | 185.199.108.153   | Proxied      | GitHub Pages IP addresses (4x)   |
-| A     | example.com | 185.199.109.153   | Proxied      |                                  |
-| A     | example.com | 185.199.110.153   | Proxied      |                                  |
-| A     | example.com | 185.199.111.153   | Proxied      |                                  |
+| A     | example.com | 185.199.108.153   | DNS Only     | GitHub Pages IP addresses (4x)   |
+| A     | example.com | 185.199.109.153   | DNS Only     |                                  |
+| A     | example.com | 185.199.110.153   | DNS Only     |                                  |
+| A     | example.com | 185.199.111.153   | DNS Only     |                                  |
 | CNAME | www         | example.github.io | DNS Only     | Points to GitHub Pages, no proxy |
 
 ---
